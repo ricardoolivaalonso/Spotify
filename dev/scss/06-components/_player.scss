@@ -1,0 +1,111 @@
+.player{
+    &__current{
+        display: none;
+        @media(min-width: 768px){
+            @include flex(flex, center, center, column, wrap);
+            height: 100%;
+            min-width: 250px;
+            flex-grow: 1;
+        }
+    }
+    &__settings{
+        display: none;
+        @media(min-width: 768px){
+            @include flex(flex, flex-end, center, row, nowrap);
+            height: 100%;
+            min-width: 250px;
+            padding-right: $gap;
+            flex-grow: 1;
+        }
+    }
+    &__menu{
+        min-width: 100%;
+        padding: 10px $gap * 2;
+        @include flex(flex, center, center, column, wrap);
+        @media(min-width: 768px){
+            padding: 0;
+            height: 100%;
+            min-width: 350px;
+        }
+    }
+    &__photo{
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        background: url("../img/album.jpeg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &__song,
+    &__artist{
+        width: 100%;
+        line-height: 2;
+        margin: 0 5px;
+    }
+    &__song{ color: $white; }
+    &__control{
+        @include flex(flex, center, center, row, wrap);
+        width: 100%;
+    }
+    &__icon{
+        width: 13px;
+        height: 13px;
+        margin: 0 17.5px;
+        opacity: .7;
+        &:nth-of-type(2){
+            transform: rotate(180deg);
+        }
+        &:nth-of-type(3){
+            width: 17px;
+            height: 17px;
+        }
+        &:hover{ opacity: 1; }
+    }
+    &__time{
+        width: 100%;
+        max-width: 530px;
+        height: 4px;
+        position: relative;
+        background: rgba($white, .15);
+        border-radius: 4px;
+        margin-top: 15px;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+            background: rgba($white, .6);
+        }
+        @media(min-width: 768px){
+            &::after{
+                content: '3:06';
+                position: absolute;
+                top: -5px;
+                left: -35px;
+                font-size: 10px;
+            }
+        }
+    }
+    &__volume{
+        width: 100%;
+        max-width: 70px;
+        height: 4px;
+        position: relative;
+        background: rgba($white, .15);
+        border-radius: 4px;
+        margin-left: 15px;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+            background: rgba($white, .7);
+        }
+    }
+}

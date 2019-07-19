@@ -1,0 +1,48 @@
+.bar{
+    &__container{
+        @include flex(flex, center, center, column, wrap);
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        bottom: 100px;
+        right: $gap;
+        z-index: 200;
+        border-radius: 50%;
+        background: $green;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        transition: all .5s ease;
+
+        @media(min-width: 768px){ display: none; }
+    }
+    &__line{
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: $white;
+
+        &:nth-of-type(2){ transform: rotate(90deg); }
+    }
+}
+.playlist{
+    &__list{
+        @include flex(flex, flex-start, flex-start, column, wrap);
+        width: 100%;
+        min-height: 100%;
+        padding-bottom: $gap;
+    }
+    &__subtitle{
+        padding: $gap 0 10px ($gap + 4px);
+        letter-spacing: 2px;
+        font-weight: 300;
+    }
+    &__item{
+        @include flex(flex, center, flex-start, column, wrap);
+        height: 16px;
+        width: 100%;
+        padding-left: $gap;
+        margin: 7px 0;
+        border-left: 4px solid transparent;
+        
+        &:hover{ color: $white; }
+    }
+}

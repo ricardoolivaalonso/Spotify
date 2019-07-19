@@ -1,0 +1,53 @@
+.account{
+    &__search,
+    &__info{
+        @include flex(flex, center, center, row, nowrap);
+    }
+    &__menu{ transform: rotate(90deg); }
+    &__settings{
+        background: $black;
+        position: absolute;
+        top: 45px;
+        right: 0;
+        @include flex(flex, flex-start, flex-start, column, nowrap);
+    }
+    &__item-settings{
+        height: 40px;
+        width: 100%;
+        padding: $gap;
+        @include flex(flex, center, flex-start, column, nowrap);
+
+        &:hover{ background: $gray-white; }
+    }
+    &__input{
+        width: 175px;
+        height: 25px;
+        padding-left: $gap;
+        margin-left: 5px;
+        background: $white;
+        border: 0;
+        outline: 0;
+        border-radius: 25px;
+        display: none;
+        @media(min-width: 768px){
+            display: flex;
+        }
+    }
+    &__arrow{
+        height: 30px;
+        width: 30px;
+        margin: 0 5px;
+        &:nth-of-type(1){ transform: rotate(180deg); }
+        &:nth-of-type(2){ opacity: .2; }
+    }
+    &__title{
+        font-weight: 400;
+        letter-spacing: .5px;
+    }
+    &__photo{
+        height: 30px;
+        width: 30px;
+        margin-right: 15px;
+        border-radius: 50%;
+    }
+}

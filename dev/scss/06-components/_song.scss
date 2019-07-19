@@ -1,0 +1,187 @@
+.song{
+    &__generic{
+        @include flex(flex, center, center, row, nowrap);
+        @media(min-width: 768px){
+            @include flex(flex, space-between, center, row, nowrap);
+        }
+    }
+    &__item{
+        @include flex(flex, space-around, flex-start, column, wrap);
+        width: 100%;
+        height: 55px;
+        border-bottom: 1px solid rgba($white, .1);
+        margin: 5px 0;
+        color: $white;
+        position: relative;
+        cursor: pointer;
+        @media(min-width: 768px){
+            margin: 0;
+            height: 42px;
+            @include flex(flex, flex-start, center, row, nowrap);
+
+            &:hover::before {
+                content: '';
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                top: 12.5px;
+                left: 20px;
+                background: url("../img/play.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &:hover{ background: $gray-white; }
+        }
+    }
+    &__th{
+        display: none;
+        @media(min-width: 768px){
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: $gray;
+       }
+    }
+    &__button{
+        width: 150px;
+        height: 30px;
+        background: darken($green, 2);
+        color: $white;
+        border: 0;
+        outline: 0;
+        border-radius: 30px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        &:hover{
+            background: $green;
+            transform: scale(1.06);
+            transition: all .3s;
+        }
+    }
+    &__input{
+        width: 100%;
+        height: 40px;
+        margin: $gap 0;
+        padding-left: $gap;
+        background: none;
+        border: 0;
+        outline: 0;
+        color: $white;
+        border-radius: 3px;
+        position: relative;
+        background: $gray-white;
+        @media(min-width: 768px){
+            background: none;
+            &:focus{ background: $gray-white;}
+        }
+    }
+
+    &__like{
+        display: none;
+        @media(min-width: 768px){
+            display: flex;
+            width: 15px;
+            height: 15px;
+            margin-left: $gap * 3;
+        }
+        &:hover{ opacity: .5; }
+    }
+    &__title{
+        @media(min-width: 768px){
+            width: auto;
+            flex-grow: 1;
+            min-width: 200px;
+            padding: 0 $gap;
+            overflow: hidden;
+        }
+    }
+    &__artist{
+        color: rgba($white, .7);
+        @media(min-width: 768px){
+            color: $white;
+            min-width: 170px;
+            overflow: hidden;
+        }
+    }
+    &__album{
+        display: none;
+        @media(min-width: 768px){
+            min-width: 220px;
+            overflow: hidden;
+            display: flex;
+        }
+    }
+    &__date{
+        display: none;
+        @media(min-width: 768px){
+            min-width: 150px;
+            overflow: hidden;
+            display: flex;
+        }
+    }
+    &__duration{
+        display: none;
+        @media(min-width: 768px){
+            min-width: 50px;
+            overflow: hidden;
+            display: flex;
+        }
+    }
+    &__switch {
+        display: none;
+        @media(min-width: 768px){
+            position: relative;
+            display: inline-block;
+            width: $gap * 2;
+            height: $gap;
+        }
+    }
+    &__switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $gray;
+    border: 1px solid $gray-white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: $gap - 1px ;
+    width: $gap - 1px ;
+    left: 0px;
+    bottom: 0px;
+    background-color: $white;
+    border: 1px solid transparent;
+
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: $green;
+}
+input:focus + .slider {
+   box-shadow: 0 0 1px $black;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: $gap;
+}
+.slider.round:before {
+    border-radius: 50%;
+}

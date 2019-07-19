@@ -1,0 +1,63 @@
+html, body {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: normal;
+		font-display: auto;
+		color: rgba($white, .7);
+		background: $gray;
+		scrollbar-width: none;
+		overflow-y: hidden;
+
+}
+main{
+		@include flex(flex, flex-start, flex-start, row, wrap);
+		max-width: 1600px;
+		min-height: 100vh;
+		margin: 0 auto;
+		overflow-x: hidden;
+		position: relative;
+		font-size: 12px;
+		letter-spacing: .25px;
+		scrollbar-width: none;
+}
+a{
+		text-decoration: none;
+		color: rgba($white, .7);
+		outline: none;
+}
+h1{
+		width: 100%;
+		font-weight: 700;
+		line-height: 3;
+		font-size: 24px;
+		text-align: center;
+		color: $white;
+
+		@media(min-width: 768px){
+				font-size: 40px;
+				text-align: left;
+		}
+}
+h3{
+		font-size: 10px;
+		letter-spacing: 1px;
+}
+
+
+::-webkit-scrollbar {
+		width: 0;
+}
+@media(min-width: 768px){
+		::-webkit-scrollbar {
+				width: 15px;
+		}
+		::-webkit-scrollbar-track {
+				border-radius: 5px;
+				background: $black;
+		}
+		::-webkit-scrollbar-thumb {
+				background: rgba($white, .3);
+		}
+		::-webkit-scrollbar-thumb:hover {
+				background: rgba($white, .6);
+		}
+}

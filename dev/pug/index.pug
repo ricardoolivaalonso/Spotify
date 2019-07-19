@@ -1,0 +1,42 @@
+doctype html
+html(lang="es", dir="ltr")
+    head
+        meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        meta(charset="utf-8")     
+           
+        meta(name="author", content="Ricardo Oliva Alonso")
+        meta(name="title", content="Ricardo Oliva Alonso | Desarrollador Web | Spotify")
+        meta(name="description", content="Hola soy desarrollador web y esta página esta basada en Spotify.")
+        meta(name="robots", content="index,follow")
+        title Ricardo Oliva Alonso | Desarrollador Web | Spotify
+          
+        meta(name="theme-color", content="#191919")      
+        link(rel="stylesheet", href="css/styles.css")  
+        link(href="img/favicon.png", rel="shorcut icon", type="image/x-icon")
+        link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700", rel="stylesheet", type="text/css" )
+            
+            
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-127993073-3")
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-127993073-3');
+    body
+        //-********** MAIN CONTAINER **********
+        main.main#main
+            include account.pug
+            include bar.pug
+            include playlist.pug
+            include song.pug
+            include player.pug
+                   
+        script( src="js/jquery.min.js", defer)
+        //- script( src="js/OverlayScrollbars.min.js", defer)
+        script( src="js/scripts.js", defer)
+    
+
+
+
+    
